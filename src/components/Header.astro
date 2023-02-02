@@ -1,0 +1,27 @@
+--- 
+type Link = {
+  title: string,
+  link: string
+}
+const links: Link[] = [
+  { title: 'Home', link: '/' },
+  { title: 'About Us', link: '/about-us' },
+  { title: 'What We Do', link: '/what-we-do' },
+  { title: 'Contact Us', link: '/contact-us' },
+]
+--- 
+
+<header class="fixed top-0 w-full left-0 bg-gray-800 text-white flex justify-between">
+  <div id="logo">
+    <a href="/">HCI York</a>
+  </div>
+  <nav>
+    <ul>
+      {links.map((link) => 
+      <li>
+        <a href={link.link}>{link.title}</a>
+      </li>
+      )}
+    </ul>
+  </nav>
+</header>

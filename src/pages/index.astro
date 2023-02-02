@@ -1,0 +1,28 @@
+---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const cards = [{
+  title: '1',
+  body: '2',
+  href: '3'
+},{
+  title: '4',
+  body: '5',
+  href: '6'
+},{
+  title: '7',
+  body: '8',
+  href: '9'
+}]
+---
+
+<Layout title="Homepage">
+  <main>
+    <Hero />
+    <section class="cards">
+      {cards.map((x) => <Card title={x.title} body={x.body} href={x.href} />)}
+    </section>
+  </main>
+</Layout>
